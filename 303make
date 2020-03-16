@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import sys
+import parsing
+import core
+
+sys.argv.pop(0)
+command, recipe, toBuild = parsing.parse(sys.argv)
+
+core = core.Core(recipe, command)
+
+if (len(sys.argv) == 1):
+    core.displayMatrix()
+    print("")
+    core.readMatrix()
+else:
+    core.completeBuild(toBuild)
+    core.displayBuild()
+
+
+
+
+

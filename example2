@@ -1,0 +1,14 @@
+tty: test.o test2.o
+cc -o tty test.o test2.o
+
+tty.o: tty.c fc.h
+cc -c tty.c
+
+fc.o: fc.c fc.h
+cc -c fc.c
+
+test.o: test.c fc.o tty.o fc.h
+cc -c test.c
+
+test2.o: test2.c test2.h
+cc -c test2.c
